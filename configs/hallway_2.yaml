@@ -1,0 +1,29 @@
+# Details of the experiment for better trackability
+experiment:
+  name:  "Default"  #Name of the inference
+  area: "a1"
+# Parameters of the bounding box prediction 
+pipeline:
+  clustering:
+    algo: "kmeans"  # Clustering algorithm, here kmeans
+    k: 2            # Number of centroids
+    init_centroids: "++"
+  feature_extractor:
+    network: "DINO"
+    model: "vits8" #patch size 8
+
+# Details of the data
+data:
+  name: ["Stanford3dDataset"]
+  path: "data/Area1/hallway_2"
+  point_cloud_name: "hallway_2.txt"
+  point_cloud:
+    path: "data/Area1/hallway_2/hallway_2.txt"  # path leading to point cloud
+
+
+
+# Logs details
+save:
+  folder: "configs/logs"        # logs folder
+  point_cloud: True      # Flag
+  images: True           # Flag
